@@ -4,11 +4,9 @@ import 'package:meals/screens/meal_detail.dart';
 import 'package:meals/widgets/meal_item.dart';
 
 class MealsScreen extends StatelessWidget {
-  const MealsScreen({super.key, this.title, required this.meals, required this.onToggleFavorites});
+  const MealsScreen({super.key, this.title, required this.meals});
 
   final String? title;
-    final void Function(Meal meal) onToggleFavorites;
-
 
   final List<Meal> meals;
 
@@ -16,7 +14,7 @@ class MealsScreen extends StatelessWidget {
    
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (ctx) => MealDetail(meal: meal, onToggleFavorites: onToggleFavorites)
+        builder: (ctx) => MealDetail(meal: meal)
           )
           );
   }
